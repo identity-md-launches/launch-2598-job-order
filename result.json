@@ -1,0 +1,158 @@
+{
+  "project": "sigmahook.com siphon wheel logo animation",
+  "status": "delivered",
+  "assets": [
+    {
+      "path": "artifacts/image.png",
+      "format": "image/png",
+      "width": 512,
+      "height": 512,
+      "bytes": 71313,
+      "sha256": "2442fe0e24278d9d58f7bfe065bdddc95bd673ea00c6002b0c1acc75c198e139",
+      "purpose": "required preview"
+    },
+    {
+      "path": "deliverables/siphon-wheel.json",
+      "format": "application/json; Lottie",
+      "width": 512,
+      "height": 512,
+      "bytes": 17557,
+      "sha256": "10da6a57b325d0e2a04130c9468203280d72cf93a8cdf0be91a2dd374c4973b2",
+      "purpose": "intro plus repeating segment",
+      "durationSeconds": 6,
+      "framesPerSecond": 60
+    },
+    {
+      "path": "deliverables/siphon-wheel-loop.json",
+      "format": "application/json; Lottie",
+      "width": 512,
+      "height": 512,
+      "bytes": 16276,
+      "sha256": "4f2c744748aeb3731ee64963895a6d80985782b663bb440e0e536e7d502d84d4",
+      "purpose": "standalone steady-state loop",
+      "durationSeconds": 4,
+      "framesPerSecond": 60
+    },
+    {
+      "path": "deliverables/siphon-wheel.mp4",
+      "format": "video/mp4; H.264 Baseline / avc1; yuv420p",
+      "width": 512,
+      "height": 512,
+      "bytes": 920103,
+      "sha256": "09cafd2b0ef0d177f171062a99563dcaa7480ec86d933e03f1a4ad05efc57560",
+      "purpose": "one-pass intro and flow fallback",
+      "durationSeconds": 6,
+      "framesPerSecond": 60
+    },
+    {
+      "path": "deliverables/siphon-wheel-loop.mp4",
+      "format": "video/mp4; H.264 Baseline / avc1; yuv420p",
+      "width": 512,
+      "height": 512,
+      "bytes": 793693,
+      "sha256": "3818f9e76cfd80282839800875e778e52ec618b5b4d589eb523146a56932da83",
+      "purpose": "whole-file looping fallback",
+      "durationSeconds": 4,
+      "framesPerSecond": 60
+    },
+    {
+      "path": "source/siphon-wheel.svg",
+      "format": "image/svg+xml; inline CSS",
+      "width": 512,
+      "height": 512,
+      "bytes": 3948,
+      "sha256": "ace685a14b9d78a450943635b2e0630194920e898aff82ccd1c11f89a3902e23",
+      "purpose": "editable vector animation source"
+    },
+    {
+      "path": "deliverables/siphon-wheel-poster.png",
+      "format": "image/png",
+      "width": 512,
+      "height": 512,
+      "bytes": 71313,
+      "sha256": "2442fe0e24278d9d58f7bfe065bdddc95bd673ea00c6002b0c1acc75c198e139",
+      "purpose": "static filled fallback"
+    },
+    {
+      "path": "deliverables/siphon-wheel-32.png",
+      "format": "image/png",
+      "width": 32,
+      "height": 32,
+      "bytes": 1785,
+      "sha256": "78cb95492df15f9c5f75a88c89ee7e7953870f553ba2e16a40186d9287ff1b23",
+      "purpose": "icon-size review"
+    }
+  ],
+  "timeline": {
+    "fps": 60,
+    "introFrames": [
+      0,
+      120
+    ],
+    "loopFrames": [
+      120,
+      360
+    ],
+    "rangeConvention": "inclusive start, exclusive end",
+    "introPlaysOnce": true,
+    "requiresSegmentAwarePlayerForIntroAsset": true,
+    "markers": [
+      "intro",
+      "loop"
+    ],
+    "playerExample": "preview/player.js"
+  },
+  "visual": {
+    "text": false,
+    "background": "#090F18",
+    "waterColors": [
+      "#627DFA",
+      "#36C9EF",
+      "#94EDFF"
+    ],
+    "structure": "muted silver and grey, eight identical vanes",
+    "flow": "continuous single ribbon: left rises, top crests, right falls, bottom returns",
+    "rotation": "45 degrees per 4-second cycle, clockwise, eightfold symmetry"
+  },
+  "checks": {
+    "pixelAndContainerReport": "review/check-results.json",
+    "exactLoopEndpointDifferentPixels": 0,
+    "realLottieSegmentControllerPassed": true,
+    "fullMp4DecodePassed": true,
+    "loopMp4DecodePassed": true,
+    "mp4Decoder": "FFmpeg, independent full decode; no audio",
+    "visuallyInspected": [
+      "512px PNG",
+      "32px PNG",
+      "intermediate priming frame",
+      "decoded MP4 frame"
+    ],
+    "fullBrowserAutomationPerformed": false,
+    "cloudflareDeploymentPerformed": false
+  },
+  "unmetVisualRequirements": [
+    "Exact match to the live site accent and background colors is unverified: no site assets were present, and sigmahook.com was inaccessible (direct HTTP 403)."
+  ],
+  "limitations": [
+    "The existing logo source format could not be inspected; SVG+CSS was chosen from the requested source options.",
+    "A timeline JSON cannot choose its own repeating segment: the intro asset needs the documented player setup. Whole-file-only players should use the loop-only asset.",
+    "MP4 is lossy; exact pixel endpoint equality was measured on the Lottie rendering, not compressed video."
+  ],
+  "visualApproval": {
+    "status": "awaiting owner visual review before publication",
+    "step": "Open preview/index.html via a local HTTP server, watch the prime and two loops, inspect the 32px sample, and compare colors with the live site."
+  },
+  "rebuild": {
+    "offline": true,
+    "commands": [
+      "python3 source/generate.py",
+      "node tools/render.cjs",
+      "node tools/check.cjs"
+    ],
+    "prerequisites": [
+      "Python 3",
+      "Node.js 18+ with WebAssembly"
+    ],
+    "dependencies": "ordinary files in vendor/; see THIRD_PARTY.md"
+  }
+}

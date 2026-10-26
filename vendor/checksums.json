@@ -1,0 +1,6 @@
+{
+  "vendor/lottie/lottie.min.js": "2eb762973aec914d981f426123040bfac9d26217239605e225ddc7cee17618ac",
+  "vendor/resvg/index.cjs": "0c1cd17c478a10ad891b147808c4f27b1023216f7726c49528c22c310c83ee6c",
+  "vendor/resvg/index_bg.wasm": "22bf6e9f9a100d972da0411a69c5ba504367fc1fa87b3b64e3f35e53926d2d70",
+  "vendor/h264/encoder.cjs": "f8df9c1791b249f75e5cef77f8e32a135b4cdb2c918a0c4593669e8571085c0c"
+}

@@ -1,0 +1,57 @@
+{
+  "dimensions": [
+    512,
+    512
+  ],
+  "fps": 60,
+  "introSeconds": 2,
+  "loopSeconds": 4,
+  "endpointDifferentPixels": 0,
+  "endpointMaximumChannelDifference": 0,
+  "loopAssetMatchesFullSegment": true,
+  "introBluePixelCounts": [
+    112,
+    4126,
+    9379,
+    14590,
+    18544
+  ],
+  "flowDirection": "left rises, top crests, right descends",
+  "rotorMotion": "45 degrees per 4 seconds; eightfold symmetry",
+  "externalAssets": 0,
+  "playerCheck": {
+    "introCompletes": 1,
+    "loopCompletes": 2,
+    "segment": [
+      120,
+      360
+    ]
+  },
+  "videoChecks": [
+    {
+      "file": "siphon-wheel.mp4",
+      "codec": "H.264 Baseline / avc1",
+      "dimensions": [
+        512,
+        512
+      ],
+      "frames": 360,
+      "seconds": 6,
+      "fps": 60,
+      "fastStart": true
+    },
+    {
+      "file": "siphon-wheel-loop.mp4",
+      "codec": "H.264 Baseline / avc1",
+      "dimensions": [
+        512,
+        512
+      ],
+      "frames": 240,
+      "seconds": 4,
+      "fps": 60,
+      "fastStart": true
+    }
+  ],
+  "checksPassed": true
+}

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Siphon wheel · review</title>
+<style>
+:root{color-scheme:dark;font:15px/1.5 system-ui,sans-serif;background:#090f18;color:#e3eaf3}*{box-sizing:border-box}body{margin:0;padding:40px 24px}main{max-width:880px;margin:auto}h1{font-size:24px;font-weight:550;letter-spacing:-.03em;margin:0}p{color:#95a4b6}a{color:#94edff}header{margin-bottom:24px}.stage{display:flex;justify-content:center;align-items:center;min-height:340px;border:1px solid #263343;border-radius:20px;background:#090f18}.mark{width:min(100%,480px);aspect-ratio:1}video{display:none;width:min(100%,480px);aspect-ratio:1}.controls{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}button{font:inherit;background:#152334;color:#e3eaf3;border:1px solid #344152;border-radius:8px;padding:8px 14px;cursor:pointer}button:focus-visible,a:focus-visible{outline:2px solid #94edff;outline-offset:4px}.samples{display:flex;align-items:center;gap:40px;padding:24px 0}.sample{display:grid;justify-items:center;gap:8px}.sample span{color:#95a4b6;font-size:12px}.notes{border-top:1px solid #263343;padding-top:20px;font-size:14px}code{color:#c1d1e4}#status{min-height:24px;font-size:13px}footer{margin-top:30px;font-size:13px;color:#95a4b6}
+</style>
+</head>
+<body>
+<main>
+<header><h1>Siphon wheel</h1><p>Two seconds to prime. Four seconds of continuous flow.</p></header>
+<div class="stage">
+  <div id="mark" class="mark" role="img" aria-label="Silver siphon wheel with water rising on the left and falling on the right"></div>
+  <video id="fallback" muted playsinline preload="auto" aria-label="Siphon wheel animation" poster="../deliverables/siphon-wheel-poster.png"></video>
+</div>
+<div class="controls"><button id="replay">Replay intro</button><button id="pause">Pause</button><button id="mode">Show MP4 fallback</button></div>
+<p id="status" aria-live="polite">Loading the standalone Lottie asset…</p>
+<div class="samples" aria-label="Readability at icon sizes">
+  <div class="sample"><img src="../deliverables/siphon-wheel-32.png" width="32" height="32" alt="Logo at 32 pixels"><span>32 px</span></div>
+  <div class="sample"><img src="../deliverables/siphon-wheel-poster.png" width="64" height="64" alt="Logo at 64 pixels"><span>64 px</span></div>
+  <div class="sample"><img src="../deliverables/siphon-wheel-poster.png" width="128" height="128" alt="Logo at 128 pixels"><span>128 px</span></div>
+</div>
+<div class="notes">
+<p><a href="../deliverables/siphon-wheel.json">Lottie with intro</a> · <a href="../deliverables/siphon-wheel-loop.json">Lottie loop only</a> · <a href="../deliverables/siphon-wheel.mp4">MP4</a> · <a href="../source/siphon-wheel.svg">SVG + CSS source</a></p>
+<p>The Lottie timeline is 60 fps. Intro: frames 0–119. Repeating segment: [120, 360). The wheel advances 45° each cycle; eight identical vanes make the boundary match exactly. Reduced motion displays a filled, static mark.</p>
+<p>Visual review: watch the first fill, then two complete loops. Confirm that water rises on the left, crosses the crest and falls on the right. Inspect the 32 px sample. Approve the colors against the live site before publishing.</p>
+</div>
+<footer>No external fonts, images, CDNs or network dependencies. All files are served locally.</footer>
+</main>
+<script src="../vendor/lottie/lottie.min.js"></script>
+<script src="player.js"></script>
+</body>
+</html>
